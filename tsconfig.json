@@ -8,13 +8,13 @@
         "strict": true,
         "esModuleInterop": true,
         "skipLibCheck": true,     
-       
+        "allowImportingTsExtensions": true ,
         "forceConsistentCasingInFileNames": true
        
     },
     "ts-node": {
         "esm": true
     },
-    "include": ["./**/*.ts", "register.mjs"], 
+    "include": ["./**/*.ts"], 
     "exclude": ["node_modules", "dist"]
 }

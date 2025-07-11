@@ -6,15 +6,13 @@ const fastify = Fastify({
 })
 
 fastify.get('/', (request, reply)=>{
-    reply.send({message:"Helo word"})
+       reply.send({message: "Hello World"})
 })
 
-fastify.listen({port:3000},(err,address)=>{
+fastify.listen({port: 3000}, (err, address)=>{
     if(err){
         fastify.log.error(err)
         process.exit(1)
     }
-    console.log("Aplicação rodando igual um foguete")
+    console.log("Aplicação rodando que nem um foguete! ✔")
 })
-
-console.log("HELLO WORD");
