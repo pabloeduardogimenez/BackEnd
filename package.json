@@ -1,11 +1,11 @@
 {
   "name": "CursoBackEnd",
   "version": "1.0.0",
-  "description": "Este ´",
-  "main": "index.js",
+  "description": "Este ",
+  "main": "index.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "server": "nodemon ./src/index.js"
+    "server": "nodemon ./src/index.ts"
   },
   "keywords": [],
   "author": "Pablo",
@@ -15,6 +15,9 @@
     "fastify": "^5.4.0"
   },
   "devDependencies": {
-    "nodemon": "^3.1.10"
+    "@types/node": "^24.0.13",
+    "nodemon": "^3.1.10",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.8.3"
   }
 }
