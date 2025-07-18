@@ -12,7 +12,7 @@ export interface IError {
 		code: number;
 		error: string;
 		keyValue: Record<string, string>;
-		keyPattern?: Record<string, any>;
+		keyPattern?: Record<string, any>; /* any */
 	};
 }
 
@@ -21,11 +21,22 @@ export type QueryParams = {
 	itemsPerPage?: number;
 	sort?: string;
 	order?: "asc" | "desc";
+	name?:string;
+	minPrice?:string;
+	maxPrice?:string;
+	status?:string;
 };
 
-export type TProducts {
-	name: String,
-	description :String,
-	category : String,
-	price: Number,
+export type TProducts = {
+	name: string;
+	description :string;
+	category : string;
+	price: number;
+}
+
+
+export type TFilterProducts = {
+	name?: { $regex:string; $options:string};
+	price?: any; /*any*/
+	status?: any;/*any*/
 }

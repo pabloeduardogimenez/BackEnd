@@ -2,6 +2,7 @@ import Fastify from "fastify"
 import usersRoutes from "./routes/users.ts";
 import customersRoutes from "./routes/customers.ts";
 import { connectDatabase } from "./config/databese.ts";
+import productsRoutes from "./routes/products.ts";
 
 async function start() {  
 const fastify = Fastify({
@@ -14,10 +15,12 @@ const fastify = Fastify({
 
 fastify.register(usersRoutes, { prefix: "/users" });
 fastify.register(customersRoutes, { prefix: "/customers" });
+fastify.register(productsRoutes, { prefix: "/products" });
 
 await connectDatabase();
 
-fastify.listen({ port: 3000}, (err, address) => {
+
+fastify.listen({ port: 4500}, (err, address) => {
 	if (err) {
 		fastify.log.error(err);
 		process.exit(1);

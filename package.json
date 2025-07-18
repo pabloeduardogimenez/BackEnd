@@ -6,7 +6,7 @@
   "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "server": "node --watch --import ./register-loader.mjs src/index.ts --port 3000"
+    "server": "node --watch --import ./register-loader.mjs src/index.ts --port 4500"
   },
   "keywords": [],
   "author": "Pablo",
