@@ -16,6 +16,11 @@ const customerSchema = new mongoose.Schema({
 		type: Number,
 		default: 18, // Caso o "age" não seja fornecido, o valor padrão é 18
 	},
+		// Relacionamento com produtos favoritos
+	favoriteProducts: [{
+		type: mongoose.Schema.Types.ObjectId,
+		ref: 'Product'
+	}],
 	createdAt: {
 		type: Date,
 		required: true,
