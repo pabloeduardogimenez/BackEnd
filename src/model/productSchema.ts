@@ -20,7 +20,11 @@ const productSchema = new mongoose.Schema({
 		type: Date,
 		required: true,
 		default: Date.now, // O campo "createdAt" será preenchido com a data atual por padrão
-	},    
-})
+	}, 
+    clientId: {
+		type: String,
+		required: true,
+	},
+});   
 /* Criar schemas no banco de Mongo Caso Não Existe na Base da Dados "user" */
 export const Product = mongoose.model("Product", productSchema);

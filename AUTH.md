@@ -68,3 +68,19 @@ Verificar expiração e renovação de tokens
 11. Configurar Variáveis de Ambiente
 JWT_SECRET e JWT_REFRESH_SECRET no .env
 Configurações de expiração de tokens
+
+
+exemplos
+rotar http://localhost:4500/auth/register
+{
+  "email":"pablo@gmail,com",
+  "password":"pablo@2025",
+  "age":43
+}
+
+http://localhost:4500/auth/login
+
+{  
+  "email":"pablo@gmail.com",
+  "password":"pablo@2025" 
+}

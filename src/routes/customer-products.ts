@@ -14,7 +14,7 @@ export default async function customerProductsRoutes(fastify: FastifyInstance) {
 	});
 
     const RemoveFavoriteProductsSchema = z.object({
-        ProductIds: z.array(z.string().min(24, "ID do produto deve ter 24 caracteres"))
+        productIds: z.array(z.string().min(24, "ID do produto deve ter 24 caracteres"))
 			.min(1, "Pelo menos um produto deve ser fornecido")
 			.max(10, "Máximo de 10 produtos favoritos"),
 	});
@@ -112,7 +112,7 @@ export default async function customerProductsRoutes(fastify: FastifyInstance) {
         }
     });
 
-	fastify.post("/:customerId/favorites/remove", async (request, reply)=>{
+	fastify.delete("/:customerId/favorites/remove", async (request, reply)=>{
 		
         const { customerId } = request.params as { customerId: string };
 
@@ -139,10 +139,10 @@ export default async function customerProductsRoutes(fastify: FastifyInstance) {
 				})),
 			};
 		}
-        const {ProductIds} = validationResult.data;
+        const {productIds} = validationResult.data;
         try{
             console.log("Customer ID:", customerId);
-			console.log("Product IDs:", ProductIds);
+			console.log("Product IDs:", productIds);
 
             const customerExists = await Customer.findById(customerId);
             if (!customerExists) {
@@ -156,7 +156,7 @@ export default async function customerProductsRoutes(fastify: FastifyInstance) {
 
 
 			const updatedFavoriteProducts = existingFavoriteProducts.filter(
-				(productId) => !ProductIds.includes(productId.toString()),
+				(productId) => !productIds.includes(productId.toString()),
 			);
 
 			customerExists.favoriteProducts = updatedFavoriteProducts;
