@@ -84,3 +84,4 @@ http://localhost:4500/auth/login
   "email":"pablo@gmail.com",
   "password":"pablo@2025" 
 }
+
