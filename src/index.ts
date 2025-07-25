@@ -23,8 +23,10 @@ fastify.register(productsRoutes, { prefix: "/products" });
 
 await connectDatabase();
 
+	const port = process.env.PORT || 4500;
+	const host = process.env.HOST || '0.0.0.0';
 
-fastify.listen({ port: 4500}, (err, address) => {
+fastify.listen({ port: Number(port), host }, (err, address) => {
 	if (err) {
 		fastify.log.error(err);
 		process.exit(1);
